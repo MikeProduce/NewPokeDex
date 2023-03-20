@@ -1,5 +1,5 @@
 import React from "react"
-import PokemonAPI from "./APIRequest/pokemonRequest"
+import PokemonPage from "./pages/PokemonPage"
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className='bg-black text-white p-4'>Pokemon database</div>
-      <PokemonAPI/>
+      <PokemonPage/>
     </div>
   )
 }
