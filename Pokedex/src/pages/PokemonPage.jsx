@@ -1,13 +1,11 @@
 import React from 'react';
 import { usePokemonAPI } from '../APIRequest/pokemonRequest';
 
-export const PokemonPage = ({nums}) => {
-  const {data,isLoading,error} = usePokemonAPI(20);
+export const PokemonPage = () => {
+  const {data,isLoading,error} = usePokemonAPI(30);
 
-  
+
   return (
-    <div>
-      return (
     <div className='lg:mx-20 mx-0'>
       {data ? (
         <ul className='text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 object-cover'>
@@ -26,8 +24,6 @@ export const PokemonPage = ({nums}) => {
       ) : (
         <p>Loading data...</p>
       )}
-    </div>
-  ); 
     </div>
   );
 }
