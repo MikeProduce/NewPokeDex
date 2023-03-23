@@ -22,7 +22,7 @@ export const PokemonPage = () => {
                 <p className='mx-2'>type: {pokemon.types[0]?.type.name}</p>
                 <p className='mx-2'>{pokemon.types[1]?.type.name}</p>
               </div>
-              <button>More Information</button>
+              <button >More Information</button>
             </li>
           ))}
         </ul>
@@ -34,4 +34,3 @@ export const PokemonPage = () => {
 };
 
 export default PokemonPage;
-
