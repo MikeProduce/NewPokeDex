@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { usePokemonAPI } from '../APIRequest/pokemonRequest';
 
 export const PokemonPage = () => {
@@ -22,7 +23,9 @@ export const PokemonPage = () => {
                 <p className='mx-2'>type: {pokemon.types[0]?.type.name}</p>
                 <p className='mx-2'>{pokemon.types[1]?.type.name}</p>
               </div>
-              <button>More Information</button>
+              <Link to={`/pokemon/${pokemon.id}`}>
+                <button>More Information</button>
+              </Link>
             </li>
           ))}
         </ul>
@@ -34,4 +37,7 @@ export const PokemonPage = () => {
 };
 
 export default PokemonPage;
+
+
+// when we click on the button we it can take us to the next page with some parameters and those parameters will have the name of the pokemon and display it 
 
