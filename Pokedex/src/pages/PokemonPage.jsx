@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { usePokemonAPI } from '../APIRequest/pokemonRequest';
 
 const PokemonPage = () => {
-  const { data, isLoading, error } = usePokemonAPI(150);
+  const { data, isLoading, error } = usePokemonAPI(150)
   console.log(data);
 
   return (
@@ -15,17 +15,17 @@ const PokemonPage = () => {
       ) : (
         <ul className='text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 object-cover'>
           {data && data.map((pokemon) => (
-            <li className='border-2 border-black mt-5 mx-2 py-2' key={pokemon.id}>
+            <li className='border-2 border-black mt-5 mx-2 py-2 bg-blue' key={pokemon.id}>
+               <p className='text-2xl'>
+               {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+              </p>
               <img
                 className='mx-auto w-64 h-64 md:h-72 md:h-72 object-contain'
                 src={pokemon.sprites.front_default}
                 alt=''
               />
-              <p className='text-xl'>
-                name: {pokemon.id} {pokemon.name}
-              </p>
               <div className='flex justify-center'>
-                <p className='mx-2'>type: {pokemon.types[0]?.type.name}</p>
+                <p className='mx-2'>{pokemon.types[0]?.type.name}</p>
                 <p className='mx-2'>{pokemon.types[1]?.type.name}</p>
               </div>
               <Link to={`/pokemon/${pokemon.id}`}>
