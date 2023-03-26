@@ -30,7 +30,7 @@ export function usePokemonAPI(nums) {
   return {
     data,
     isLoading,
-    error,
+    error, 
   };
 }
 

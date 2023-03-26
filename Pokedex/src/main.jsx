@@ -16,8 +16,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "pokemon/:pokemonId",
-        element: <IndividualPokemon pokemonId={useParams().pokemonId}/>,
+        path: "/pokemon/:pokemonId",
+        element: <IndividualPokemon/>,
       },{
         path: "/",
         element: <PokemonPage />,
