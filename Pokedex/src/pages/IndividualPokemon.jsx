@@ -5,8 +5,8 @@ import {useSinglePokemonAPI} from '../APIRequest/SinglePokemonReq';
 export const IndividualPokemon = () => {
 
   const { pokemonId } = useParams();
-console.log(pokemonId);
   const { pokemon, isLoading, error } = useSinglePokemonAPI(pokemonId);
+  console.log(pokemon)
 
 
 
