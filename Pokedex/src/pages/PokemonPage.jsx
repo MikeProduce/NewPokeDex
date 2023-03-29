@@ -6,7 +6,7 @@ const PokemonPage = () => {
   const { data, isLoading, error } = usePokemonAPI(150);
   
   return (
-    <div className='container mx-auto p-10'>
+    <div className='container mx-auto p-2'>
       {isLoading ? (
         <p className='text-center'>Loading data...</p>
       ) : error ? (
@@ -14,12 +14,12 @@ const PokemonPage = () => {
       ) : (
         <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
           {data && data.map((pokemon) => (
-            <li className='bg-white border border-gray-300 rounded-lg shadow-md' key={pokemon.id}>
+            <li className='bg-white border border-gray-300 rounded-lg' key={pokemon.id}>
               <Link to={`/pokemon/${pokemon.id}`}>
-                <div className='p-4'>
+                <div className='p-2'>
                   <div className='flex justify-center'>
                     <img
-                      className='w-32 h-32 md:w-48 md:h-48 object-contain'
+                      className='w-64 h-64 md:w-48 md:h-48 object-contain'
                       src={pokemon.sprites.front_default}
                       alt={pokemon.name}
                     />

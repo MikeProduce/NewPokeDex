@@ -6,7 +6,6 @@ export const IndividualPokemon = () => {
 
   const { pokemonId } = useParams();
   const { pokemon, isLoading, error } = useSinglePokemonAPI(pokemonId);
-  console.log(pokemon)
 
 
 

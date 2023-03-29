@@ -18,7 +18,7 @@ function App() {
               className="text-gray-500 hover:text-gray-400 focus:outline-none focus:text-gray-400"
               aria-label="Toggle menu"
             >
-              <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
+              <svg viewBox="0 0 24 24" className="h-10 w-10 fill-current">
                 {menuOpen ? (
                   <path
                     fillRule="evenodd"
