@@ -7,7 +7,7 @@ export const IndividualPokemon = () => {
 
   const { pokemonId } = useParams();
   const { pokemon, isLoading, error, } = useSinglePokemonAPI(pokemonId);
-  // console.log(pokemon.types[0]?.type.name)
+
 
 
   return (
@@ -31,13 +31,15 @@ export const IndividualPokemon = () => {
                   alt=''
                 />
               </div>
-              <div className='flex justify-center mb-4'>
-                  <span className={`inline-block px-8 py-1 text-sm font-semibold text-white bg-${pokemon.types[0].type.name} rounded-full`}>
-                    {pokemon.types[0]?.type.name.charAt(0).toUpperCase() + pokemon.types[0]?.type.name.slice(1)}
-                  </span>
-                  <span className={`inline-block px-8 py-1 text-sm font-semibold text-white bg-${pokemon.types[1].type.name} rounded-full`}>
+              <div className='flex flex-wrap justify-center mb-4'>
+                <span className={`inline-block w-40 mx-2 my-2 px-8 py-1 text-sm font-semibold text-white bg-${pokemon.types[0].type.name} rounded-full`}>
+                  {pokemon.types[0]?.type.name.charAt(0).toUpperCase() + pokemon.types[0]?.type.name.slice(1)}
+                </span>
+                {pokemon.types[1] && (
+                  <span className={`inline-block w-40 mx-2 my-2 px-8 py-1 text-sm font-semibold text-white bg-${pokemon.types[1].type.name} rounded-full`}>
                     {pokemon.types[1]?.type.name.charAt(0).toUpperCase() + pokemon.types[1]?.type.name.slice(1)}
                   </span>
+                )}
               </div>
               <div className='flex justify-center'>
                 <div className='w-1/2 text-center'>
