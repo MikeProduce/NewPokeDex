@@ -9,7 +9,7 @@ module.exports = {
       display: ["VT323","monospace"],
     },
     extend: {
-      colors: {
+      backgroundColor: {
         normal: "#A8A878",
         fire: "#F08030",
         water: "#6890F0",

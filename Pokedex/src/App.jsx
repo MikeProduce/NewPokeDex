@@ -3,7 +3,7 @@ import NavigationBar from "./navbar/navbar";
 function App() {
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white font-display">
+    <div className="min-h-screen">
       <NavigationBar />
     </div>
   );
