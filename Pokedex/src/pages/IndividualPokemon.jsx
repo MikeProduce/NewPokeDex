@@ -32,18 +32,13 @@ export const IndividualPokemon = () => {
                 />
               </div>
               <div className='flex justify-center mb-4'>
-  {pokemon.types[0] && (
-    <span className={`inline-block px-8 py-1 text-sm font-semibold text-white bg-${pokemon.types[0].type.name} rounded-full`}>
-      {pokemon.types[0]?.type.name.charAt(0).toUpperCase() + pokemon.types[0]?.type.name.slice(1)}
-    </span>
-  )}
-  {pokemon.types[1] && (
-    <span className={`inline-block px-8 py-1 text-sm font-semibold text-white bg-${pokemon.types[1].type.name} rounded-full`}>
-      {pokemon.types[1]?.type.name.charAt(0).toUpperCase() + pokemon.types[1]?.type.name.slice(1)}
-    </span>
-  )}
-</div>
-
+                  <span className={`inline-block px-8 py-1 text-sm font-semibold text-white bg-${pokemon.types[0].type.name} rounded-full`}>
+                    {pokemon.types[0]?.type.name.charAt(0).toUpperCase() + pokemon.types[0]?.type.name.slice(1)}
+                  </span>
+                  <span className={`inline-block px-8 py-1 text-sm font-semibold text-white bg-${pokemon.types[1].type.name} rounded-full`}>
+                    {pokemon.types[1]?.type.name.charAt(0).toUpperCase() + pokemon.types[1]?.type.name.slice(1)}
+                  </span>
+              </div>
               <div className='flex justify-center'>
                 <div className='w-1/2 text-center'>
                   <h2 className='text-xl font-bold text-gray-200 mb-2'>Height</h2>
