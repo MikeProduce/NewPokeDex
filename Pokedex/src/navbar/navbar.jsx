@@ -46,17 +46,23 @@ export const NavigationBar = () => {
             <Link to={"/"} className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl">
               Home
             </Link>
+            <Link to={"/PokemonType"} className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl">
+              Type
+            </Link>
           </div>
         </div>
         {/* Mobile menu links */}
-        <div className={`sm:hidden ${menuOpen ? "block" : "hidden"}`}>
-          <Link to={"/"} className="text-2xl block px-4 py-2 text-gray-500 hover:text-gray-400 transition duration-300 ease-in-out">
-            Home
-          </Link>
+        <div className={`sm:hidden ${menuOpen ? "block" : "hidden"} mt-2`}>
+        <Link to={"/"} className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl block mt-2">
+              Home
+            </Link>
+          <Link to={"/PokemonType"} className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl block mt-2">
+              Type
+            </Link>
         </div>
       </nav>
       {/* Main content */}
-      <div className="container mx-auto p-10">
+      <div className="container mx-auto p-5">
         <Outlet />
       </div>
     </div>

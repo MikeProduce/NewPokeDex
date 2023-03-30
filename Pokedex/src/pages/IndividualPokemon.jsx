@@ -1,38 +1,50 @@
-
 import { useParams } from 'react-router-dom';
-import {useSinglePokemonAPI} from '../APIRequest/SinglePokemonReq';
+import { useSinglePokemonAPI } from '../APIRequest/SinglePokemonReq';
 
 export const IndividualPokemon = () => {
 
   const { pokemonId } = useParams();
-  const { pokemon, isLoading, error } = useSinglePokemonAPI(pokemonId);
-
-
-
+  const { pokemon, isLoading, error, pokemonEvolution } = useSinglePokemonAPI(pokemonId);
+  // console.log(pokemon.types[0]?.type.name)
 
   return (
-    <div className='lg:mx-20 mx-0'>
+    <div className='container mx-auto px-4 py-8'>
       {isLoading ? (
-        <p className='mx-auto'>Loading pokemon...</p>
+        <p className='text-center'>Loading pokemon...</p>
       ) : error ? (
-        <p className='mx-auto'>Error: {error}</p>
+        <p className='text-center'>Error: {error}</p>
       ) : (
-        <div className='text-center mt-5'>
-          {pokemon && ( // add null check here
-            <>
-              <img
-                className='mx-auto w-64 h-64 md:h-72 md:h-72 object-contain'
-                src={pokemon.sprites.front_default}
-                alt=''
-              />
-              <p className='text-xl'>
-                name: {pokemon.name}
-              </p>
-              <div className='flex justify-center'>
-                <p className='mx-2'>type: {pokemon.types[0]?.type.name}</p>
-                <p className='mx-2'>{pokemon.types[1]?.type.name}</p>
+        <div className='text-center'>
+          {pokemon && (
+            <div>
+              <div className='flex justify-between'>
+                <h1 className='text-3xl font-bold mb-2 text-gray-200 text-left'>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
+                <p className='text-gray-400 mb-4 text-right text-3xl'>#{pokemon.id}</p>
               </div>
-            </>
+              <div className='flex justify-center mb-4'>
+                <img
+                  className='w-72 h-72 md:w-96 md:h-96 object-contain'
+                  src={pokemon.sprites.front_default}
+                  alt=''
+                />
+              </div>
+              <div className='flex justify-center mb-4'>
+                <span className={`inline-block px-8 py-1 text-sm font-semibold text-white bg-${pokemon.types[0]?.type.name} rounded-full mr-2`}>{pokemon.types[0]?.type.name.charAt(0).toUpperCase() + pokemon.types[0]?.type.name.slice(1)}</span>
+                {pokemon.types[1] && (
+                  <span className='inline-block px-8 py-1 text-sm font-semibold text-white bg-gray-500 rounded-full'>{pokemon.types[1]?.type.name.charAt(0).toUpperCase() + pokemon.types[1]?.type.name.slice(1)}</span>
+                )}
+              </div>
+              <div className='flex justify-center'>
+                <div className='w-1/2 text-center'>
+                  <h2 className='text-xl font-bold text-gray-200 mb-2'>Height</h2>
+                  <p className='text-gray-400'>{pokemon.height}</p>
+                </div>
+                <div className='w-1/2 text-center'>
+                  <h2 className='text-xl font-bold text-gray-200 mb-2'>Weight</h2>
+                  <p className='text-gray-300'>{pokemon.weight}</p>
+                </div>
+              </div>
+            </div>
           )}
         </div>
       )}
@@ -41,6 +53,7 @@ export const IndividualPokemon = () => {
 };
 
 export default IndividualPokemon;
+
 
 
 

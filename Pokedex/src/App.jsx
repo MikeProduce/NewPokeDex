@@ -1,5 +1,4 @@
 import NavigationBar from "./navbar/navbar";
-import PokemonPage from "./pages/PokemonPage"
 
 function App() {
 
