@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import SearchPokemon from "./searchBar";
 
 export const NavigationBar = () => {
   // State for controlling the mobile menu
@@ -49,6 +50,7 @@ export const NavigationBar = () => {
             <Link to={"/PokemonType"} className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl">
               Type
             </Link>
+            <SearchPokemon/>
           </div>
         </div>
         {/* Mobile menu links */}
@@ -59,6 +61,7 @@ export const NavigationBar = () => {
           <Link to={"/PokemonType"} className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl block mt-2">
               Type
             </Link>
+            <SearchPokemon/>
         </div>
       </nav>
       {/* Main content */}

@@ -17,7 +17,7 @@ export const IndividualPokemon = () => {
         <div className='text-center'>
           {pokemon && (
             <div>
-              <div className='bg-gray-800 p-10'>
+              <div className='bg-gray-800 rounded-lg p-10'>
               <div className='flex justify-between'>
                 <h1 className='text-3xl font-bold mb-2 text-gray-200 text-left'>
                   {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
@@ -60,11 +60,11 @@ export const IndividualPokemon = () => {
                 </div>
               </div>
               </div>
-              <div className='mt-10 bg-gray-800 p-10'>
+              <div className='mt-10 bg-gray-800 p-10 rounded-lg'>
               <h1>BASE STATS</h1>
               {pokemon.stats.map((stat, index) => (
                 <div className="w-full mt-3 items-center text-left" key={index}>
-                  <div className="text-gray-400 font-semibold text-md w-24 mr-4">
+                  <div className="text-gray-400 font-semibold text-md w-24 mr-4 ">
                     {stat.stat.name.toUpperCase()}
                   </div>
                   <div className='w-full bg-gray-200 rounded-full dark:bg-gray-700 overflow-hidden p-0.5'>
