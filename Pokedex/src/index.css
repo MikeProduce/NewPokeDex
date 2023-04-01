@@ -7,55 +7,55 @@ img {
 }
 
 .bg-normal {
-  background-color: #A8A878;
+  background-color: #a8a878;
 }
 
 .bg-fire {
-  background-color: #F08030;
+  background-color: #f08030;
 }
 
 .bg-water {
-  background-color: #6890F0;
+  background-color: #6890f0;
 }
 
 .bg-electric {
-  background-color: #F8D030;
+  background-color: #f8d030;
 }
 
 .bg-grass {
-  background-color: #78C850;
+  background-color: #78c850;
 }
 
 .bg-ice {
-  background-color: #98D8D8;
+  background-color: #98d8d8;
 }
 
 .bg-fighting {
-  background-color: #C03028;
+  background-color: #c03028;
 }
 
 .bg-poison {
-  background-color: #A040A0;
+  background-color: #a040a0;
 }
 
 .bg-ground {
-  background-color: #E0C068;
+  background-color: #e0c068;
 }
 
 .bg-flying {
-  background-color: #A890F0;
+  background-color: #a890f0;
 }
 
 .bg-psychic {
-  background-color: #F85888;
+  background-color: #f85888;
 }
 
 .bg-bug {
-  background-color: #A8B820;
+  background-color: #a8b820;
 }
 
 .bg-rock {
-  background-color: #B8A038;
+  background-color: #b8a038;
 }
 
 .bg-ghost {
@@ -63,7 +63,7 @@ img {
 }
 
 .bg-dragon {
-  background-color: #7038F8;
+  background-color: #7038f8;
 }
 
 .bg-dark {
@@ -71,12 +71,13 @@ img {
 }
 
 .bg-steel {
-  background-color: #B8B8D0;
+  background-color: #b8b8d0;
 }
 
 .bg-fairy {
-  background-color: #EE99AC;
+  background-color: #ee99ac;
 }
+
 /*I noticed that the CSS class names we're using in the JSX were not picking up the colors defined in 
 the Tailwind config file. As a workaround, I imported the color values directly into the CSS file to 
 ensure consistency with our design system. This allowed us to match the CSS class names with the corresponding 

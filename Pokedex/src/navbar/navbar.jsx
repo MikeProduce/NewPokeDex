@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import SearchPokemon from "./searchBar";
+import Dropdown from "./dropDownMenu";
 
 export const NavigationBar = () => {
   // State for controlling the mobile menu
@@ -50,12 +51,7 @@ export const NavigationBar = () => {
             >
               Home
             </Link>
-            <Link
-              to={"/PokemonType"}
-              className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl"
-            >
-              Type
-            </Link>
+            <Dropdown />
             <SearchPokemon />
           </div>
         </div>
