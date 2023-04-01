@@ -15,7 +15,7 @@ export const NavigationBar = () => {
           {/* Logo */}
           <Link to={"/"} className="text-2xl">
             Pokemon Database
-          </Link> 
+          </Link>
           {/* Mobile menu toggle button */}
           <div className="flex sm:hidden">
             <button
@@ -44,24 +44,36 @@ export const NavigationBar = () => {
           </div>
           {/* Desktop menu links */}
           <div className="hidden sm:flex space-x-4">
-            <Link to={"/"} className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl">
+            <Link
+              to={"/"}
+              className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl"
+            >
               Home
             </Link>
-            <Link to={"/PokemonType"} className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl">
+            <Link
+              to={"/PokemonType"}
+              className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl"
+            >
               Type
             </Link>
-            <SearchPokemon/>
+            <SearchPokemon />
           </div>
         </div>
         {/* Mobile menu links */}
         <div className={`sm:hidden ${menuOpen ? "block" : "hidden"} mt-2`}>
-        <Link to={"/"} className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl block mt-2">
-              Home
-            </Link>
-          <Link to={"/PokemonType"} className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl block mt-2">
-              Type
-            </Link>
-            <SearchPokemon/>
+          <Link
+            to={"/"}
+            className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl block mt-2"
+          >
+            Home
+          </Link>
+          <Link
+            to={"/PokemonType"}
+            className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl block mt-2"
+          >
+            Type
+          </Link>
+          <SearchPokemon />
         </div>
       </nav>
       {/* Main content */}
@@ -70,6 +82,6 @@ export const NavigationBar = () => {
       </div>
     </div>
   );
-}
+};
 
 export default NavigationBar;
