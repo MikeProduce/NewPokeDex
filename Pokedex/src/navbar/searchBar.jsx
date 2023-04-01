@@ -4,7 +4,7 @@ import { useSinglePokemonAPI } from '../APIRequest/SinglePokemonReq';
 const SearchPokemon = () => {
   const [searchForPokemon, setSearchForPokemon] = useState('');
   const { data, isLoading, error } = useSinglePokemonAPI(searchForPokemon);
-  console.log(data);
+  // console.log(data);
 
   const searching = function(event) {
     event.preventDefault(); // prevent form submission
