@@ -63,12 +63,7 @@ export const NavigationBar = () => {
           >
             Home
           </Link>
-          <Link
-            to={"/PokemonType"}
-            className="hover:text-gray-400 transition duration-300 ease-in-out text-2xl block mt-2"
-          >
-            Type
-          </Link>
+          <Dropdown />
           <SearchPokemon />
         </div>
       </nav>
