@@ -41,11 +41,11 @@ export const Dropdown = () => {
         <div
           className={`${
             isOpen ? "block" : "hidden"
-          } absolute text-gray-700 pt-3 bottom-100 rounded`}
+          } absolute text-gray-700 pt-3 bottom-100`}
         >
           {pokemonTypes.map((type) => (
             <ul key={type} className="">
-              <li className="px-2 py-1 text-md font-semibold bg-gray-200 text-gray-900 w-32 hover:bg-gray-900 hover:text-white transition-colors duration-300 ease-in-out">
+              <li className="px-2 py-1 text-md font-semibold bg-gray-200 text-gray-900 w-32 hover:bg-gray-900 hover:cursor-pointer hover:text-white transition-colors duration-300 ease-in-out">
                 {type}
               </li>
             </ul>

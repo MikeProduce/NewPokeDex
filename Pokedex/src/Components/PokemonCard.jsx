@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const PokemonCard = ({ pokemon }) => {
   return (
     <li
-      className="bg-white border border-gray-300 rounded-lg pb-5 hover:text-white hover:scale-105 transition-transform duration-300 ease-in-out"
+      className="bg-white border border-gray-300 rounded-lg pb-5 sm:hover:scale-105 transition-transform duration-300 ease-in-out"
       key={pokemon.name}
     >
       <Link to={`/pokemon/${pokemon.id}`}>
