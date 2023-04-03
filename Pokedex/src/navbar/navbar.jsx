@@ -63,7 +63,6 @@ export const NavigationBar = () => {
           >
             Home
           </Link>
-          <Dropdown />
           <SearchPokemon />
         </div>
       </nav>

@@ -5,7 +5,6 @@ const API_URL = "https://pokeapi.co/api/v2";
 
 export function useSinglePokemonAPI(pokemonId) {
   const [pokemon, setPokemon] = useState(null);
-  // const [pokemonEvolution, setPokemonEvolution] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -16,9 +15,7 @@ export function useSinglePokemonAPI(pokemonId) {
         const responsePokemon = await axios.get(
           `${API_URL}/pokemon/${pokemonId}`
         );
-        // const responsePokemonEvolution = await axios.get(`${API_URL}/evolution-chain/${pokemonId}`);
         setPokemon(responsePokemon.data);
-        // setPokemonEvolution(responsePokemonEvolution.data);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);

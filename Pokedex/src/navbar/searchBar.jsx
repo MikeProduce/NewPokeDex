@@ -1,19 +1,16 @@
-import { useState } from "react";
-import { useSinglePokemonAPI } from "../APIRequest/SinglePokemonReq";
+import { useNavigate } from "react-router-dom";
 
 const SearchPokemon = () => {
-  const [searchForPokemon, setSearchForPokemon] = useState("");
-  const { data, isLoading, error } = useSinglePokemonAPI(searchForPokemon);
-  // console.log(data);
-
+  const navigate = useNavigate();
   const searching = function (event) {
     event.preventDefault(); // prevent form submission
-    const input = event.target.elements.searchInput.value; // get the input value
-    setSearchForPokemon(input); // set the searchForPokemon state variable
+    const searchInput = event.target.searchInput.value;
+    const searchInputToLowerCase = searchInput.toLowerCase();
+    navigate(`pokemon/${searchInputToLowerCase}`, { replace: true });
   };
 
   return (
-    <div className="ml-6 flex items-center">
+    <div className="pt-2 sm:pt-0 flex items-center w-full">
       <form onSubmit={searching}>
         <input
           name="searchInput"
@@ -28,14 +25,6 @@ const SearchPokemon = () => {
           Search
         </button>
       </form>
-      {isLoading && <p>Loading...</p>}
-      {data && (
-        <div>
-          <h2>{data.name}</h2>
-          <img src={data.sprites.front_default} alt={data.name} />
-        </div>
-      )}
-      {error && <p>{error.message}</p>}
     </div>
   );
 };
