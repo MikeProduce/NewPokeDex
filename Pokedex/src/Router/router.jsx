@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
       },
       {
         // Set the path for the Pokemon type pages
-        path: "/PokemonType",
+        path: "/PokemonType/:Type",
         // Use the PokemonType component to display the page content
         element: <PokemonType />,
       },

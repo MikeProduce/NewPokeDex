@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { usePokemonAPI } from "../APIRequest/pokemonRequest";
+import { usePokemonTypeAPI } from "../APIRequest/pokemonRequestType";
 
 export const PokemonType = () => {
-  const { data, isLoading, error } = usePokemonAPI(11);
-
+  const { data, isLoading, error } = usePokemonTypeAPI();
+  console.log(data);
   return (
     <div className="container mx-auto p-2">
       {isLoading ? (
