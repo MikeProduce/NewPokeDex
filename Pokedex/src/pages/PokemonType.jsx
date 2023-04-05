@@ -5,8 +5,9 @@ import { useParams } from "react-router-dom";
 
 export const PokemonType = () => {
   const { Type } = useParams();
+  console.log(Type);
   const { data, isLoading, error } = usePokemonTypeAPI(Type);
-  console.log(data);
+
   return (
     <section className="container mx-auto p-2">
       {isLoading ? (
