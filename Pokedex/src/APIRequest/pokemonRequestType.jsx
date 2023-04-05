@@ -20,7 +20,7 @@ export function usePokemonTypeAPI(Type) {
       try {
         setIsLoading(true);
         const pokemonPromises = [];
-        for (let i = 1; i <= 1015; i++) {
+        for (let i = 1; i <= 150; i++) {
           pokemonPromises.push(
             axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)
           );
@@ -38,6 +38,12 @@ export function usePokemonTypeAPI(Type) {
     }
 
     fetchData();
+    if (Type === "fire" && data) {
+      const firePokemon = data.filter((pokemon) => {
+        return pokemon.types[0];
+      });
+      setData(firePokemon);
+    }
   }, []);
 
   return {
