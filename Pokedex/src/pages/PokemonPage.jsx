@@ -3,9 +3,7 @@ import { usePokemonAPI } from "../APIRequest/pokemonRequest";
 import { PokemonCard } from "../Components/PokemonCard";
 const PokemonPage = () => {
   const { data, isLoading, error } = usePokemonAPI(150);
-  if (data) {
-    console.log(data.type);
-  }
+
   return (
     <section className="container mx-auto p-2">
       {isLoading ? (
