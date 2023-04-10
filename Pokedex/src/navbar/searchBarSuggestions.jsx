@@ -1,23 +1,22 @@
 import React, { useMemo, useCallback, useEffect } from "react";
-import { usePokemonAPI } from "../APIRequest/pokemonRequest";
+import { usePaginatePokemon } from "../APIRequest/pokemonSuggestionsReq";
 
 export const SearchBarSuggestions = ({ value, setValue }) => {
-  const { data } = usePokemonAPI(150);
-
-  const filteredData = useMemo(() => {
-    if (data) {
+  const { pokemonData, isLoading, error } = usePaginatePokemon();
+  const filteredpokemonData = useMemo(() => {
+    if (pokemonData) {
       const searchTerm = value.toLowerCase();
-      return data.filter(
+      return pokemonData.filter(
         (pokemon) =>
           pokemon.name.toLowerCase().startsWith(searchTerm) &&
           pokemon.name !== searchTerm
       );
     }
     return [];
-  }, [data, value]);
-  //note while the useMemo here might not be the most optimal for smaller sets of data
-  //this would be an example and if we had a large data set this would be optimal for preformance since
-  //it would memoize the results and not have to recalculate everytime unless data or value change.
+  }, [pokemonData, value]);
+  //note while the useMemo here might not be the most optimal for smaller sets of pokemonData
+  //this would be an example and if we had a large pokemonData set this would be optimal for preformance since
+  //it would memoize the results and not have to recalculate everytime unless pokemonData or value change.
   //also useMemo returns a memoized value that is expensive to compute
 
   const handleSearch = useCallback(
@@ -35,9 +34,9 @@ export const SearchBarSuggestions = ({ value, setValue }) => {
       }`}
     >
       <ul>
-        {filteredData.map((pokemon) => (
+        {filteredpokemonData.map((pokemon) => (
           <li
-            key={pokemon.id}
+            key={pokemon.name}
             onClick={() => handleSearch(pokemon.name)}
             className="px-3 py-2 hover:bg-gray-700 cursor-pointer"
           >
