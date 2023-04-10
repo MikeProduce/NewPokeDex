@@ -1,19 +1,12 @@
 import React, { useState } from "react";
 import { usePokemonAPI } from "../APIRequest/pokemonRequest";
 import { PokemonCard } from "../Components/PokemonCard";
+import { PaginationButtons } from "../Components/PaginationButtons";
 const PokemonPage = () => {
-  const [nums, setnums] = useState(24);
-  const [bottom, setbottom] = useState(1);
-  const { data, isLoading, error } = usePokemonAPI(bottom, nums);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(24);
+  const { data, isLoading, error } = usePokemonAPI(currentPage, itemsPerPage);
 
-  const nextPage = function () {
-    setnums(nums + 24);
-    setbottom(bottom + 24);
-  };
-  const reducePage = function () {
-    setnums(nums - 24);
-    setbottom(bottom - 24);
-  };
   return (
     <section className="container mx-auto p-2">
       {isLoading ? (
@@ -28,18 +21,12 @@ const PokemonPage = () => {
             ))}
         </ul>
       )}
-      <button
-        onClick={reducePage} // call nextPage function
-        className="mt-10 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Prev
-      </button>
-      <button
-        onClick={nextPage} // call nextPage function
-        className="mt-10 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Next
-      </button>
+      <PaginationButtons
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        setCurrentPage={setCurrentPage}
+        setItemsPerPage={setItemsPerPage}
+      />
     </section>
   );
 };

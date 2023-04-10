@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useSinglePokemonAPI } from "../APIRequest/SinglePokemonReq";
-import { Link } from "react-router-dom";
 
 export const IndividualPokemon = () => {
   const { pokemonId } = useParams();
