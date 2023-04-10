@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useSinglePokemonAPI } from "../APIRequest/SinglePokemonReq";
+import { Link } from "react-router-dom";
 
 export const IndividualPokemon = () => {
   const { pokemonId } = useParams();
@@ -11,7 +12,7 @@ export const IndividualPokemon = () => {
       {isLoading ? (
         <p className="text-center">Loading pokemon...</p>
       ) : error ? (
-        <p className="text-center">Error: {error}</p>
+        <p className="text-center text-fire font-bold mt-4">Error: {error}</p>
       ) : (
         <div className="text-center">
           {pokemon && (

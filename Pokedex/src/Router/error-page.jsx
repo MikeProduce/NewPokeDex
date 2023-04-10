@@ -1,4 +1,4 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError, Link } from "react-router-dom";
 
 export default function ErrorPage() {
   const error = useRouteError();
@@ -6,10 +6,14 @@ export default function ErrorPage() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-4xl font-bold mb-4">Oops!</h1>
-      <p className="text-xl mb-2">Sorry, an unexpected error has occurred.</p>
       <p className="text-lg">
-        <i>{error.statusText || error.message}</i>
+        Error: I'm sorry, the Pokemon was not found. Please try again
+        <Link
+          className="inline-block ml-2 py-2 px-4 bg-fire text-white rounded-lg shadow hover:shadow-md transition duration-300 ease-in-out"
+          to={`/`}
+        >
+          lets go home
+        </Link>
       </p>
     </div>
   );

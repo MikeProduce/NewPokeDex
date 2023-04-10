@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export function usePokemonAPI(nums) {
+export function usePokemonAPI(starter, nums) {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ export function usePokemonAPI(nums) {
       try {
         setIsLoading(true);
         const pokemonPromises = [];
-        for (let i = 1; i <= nums; i++) {
+        for (let i = starter; i <= nums; i++) {
           pokemonPromises.push(
             axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)
           );
@@ -27,7 +27,7 @@ export function usePokemonAPI(nums) {
     }
 
     fetchData();
-  }, [nums]);
+  }, [starter, nums]);
 
   return {
     data,

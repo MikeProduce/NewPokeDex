@@ -11,7 +11,7 @@ export function usePokemonTypeAPI(Type) {
       try {
         setIsLoading(true);
         const pokemonPromises = [];
-        for (let i = 1; i <= 600; i++) {
+        for (let i = 1; i <= 125; i++) {
           pokemonPromises.push(
             axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)
           );
