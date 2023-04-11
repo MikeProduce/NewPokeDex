@@ -16,13 +16,13 @@ export const IndividualPokemon = () => {
         <div className="text-center">
           {pokemon && (
             <div>
-              <div className="bg-gray-800 rounded-lg p-2 sm:p-10">
-                <div className="flex justify-between">
-                  <h1 className="text-3xl font-bold mb-2 text-gray-200 text-left">
+              <div className="bg-gray-800 rounded-lg p-4 sm:p-10">
+                <div className="sm:flex sm:justify-between text-center">
+                  <h1 className="text-3xl font-bold mb-2 text-gray-200 sm:text-left">
                     {pokemon.name.charAt(0).toUpperCase() +
                       pokemon.name.slice(1)}
                   </h1>
-                  <p className="text-gray-400 mb-4 text-right text-3xl">
+                  <p className="text-gray-400 mb-4 sm:text-right text-3xl">
                     #{pokemon.id}
                   </p>
                 </div>

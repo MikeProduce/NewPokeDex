@@ -20,7 +20,7 @@ export const PokemonCard = ({ pokemon }) => {
           </p>
           <div className="flex flex-wrap justify-center">
             <p
-              className={`text-center rounded-full w-20 mx-2 px-5 mb-2 text-white text-lg bg-${pokemon.types[0].type.name}`}
+              className={`text-center rounded-full w-25 mx-2 px-5 mb-2 text-white text-lg bg-${pokemon.types[0].type.name}`}
             >
               {pokemon.types[0]?.type.name}
             </p>

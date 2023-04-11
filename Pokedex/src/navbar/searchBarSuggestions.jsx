@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback, useEffect } from "react";
+import React, { useMemo, useCallback } from "react";
 import { usePaginatePokemon } from "../APIRequest/pokemonSuggestionsReq";
 
 export const SearchBarSuggestions = ({ value, setValue }) => {
@@ -6,11 +6,13 @@ export const SearchBarSuggestions = ({ value, setValue }) => {
   const filteredpokemonData = useMemo(() => {
     if (pokemonData) {
       const searchTerm = value.toLowerCase();
-      return pokemonData.filter(
-        (pokemon) =>
-          pokemon.name.toLowerCase().startsWith(searchTerm) &&
-          pokemon.name !== searchTerm
-      );
+      return pokemonData
+        .filter(
+          (pokemon) =>
+            pokemon.name.toLowerCase().startsWith(searchTerm) &&
+            pokemon.name !== searchTerm
+        )
+        .slice(0, 20);
     }
     return [];
   }, [pokemonData, value]);
