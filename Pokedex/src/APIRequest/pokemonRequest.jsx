@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+const API_URL = "https://pokeapi.co/api/v2";
 
 export function usePokemonAPI(starter, nums) {
   const [data, setData] = useState(null);
@@ -13,7 +14,7 @@ export function usePokemonAPI(starter, nums) {
         const pokemonPromises = [];
         for (let i = starter; i <= nums; i++) {
           pokemonPromises.push(
-            axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)
+            axios.get(`${API_URL}/pokemon/${i}`)
           );
         }
         const pokemonResponses = await Promise.all(pokemonPromises);

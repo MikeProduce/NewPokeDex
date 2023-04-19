@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+const API_URL = "https://pokeapi.co/api/v2";
 
 export function usePokemonTypeAPI(Type) {
   const [data, setData] = useState(null);
@@ -13,7 +14,7 @@ export function usePokemonTypeAPI(Type) {
         const pokemonPromises = [];
         for (let i = 1; i <= 150; i++) {
           pokemonPromises.push(
-            axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)
+            axios.get(`${API_URL}/pokemon/${i}`)
           );
         }
         const pokemonResponses = await Promise.all(pokemonPromises);
@@ -24,7 +25,6 @@ export function usePokemonTypeAPI(Type) {
               (type) => type.type.name === Type.toLowerCase()
             );
           });
-        console.log(pokemonData);
         setData(pokemonData);
         setIsLoading(false);
       } catch (error) {

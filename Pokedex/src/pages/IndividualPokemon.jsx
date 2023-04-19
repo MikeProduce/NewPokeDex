@@ -4,7 +4,6 @@ import { useSinglePokemonAPI } from "../APIRequest/SinglePokemonReq";
 export const IndividualPokemon = () => {
   const { pokemonId } = useParams();
   const { pokemon, isLoading, error } = useSinglePokemonAPI(pokemonId);
-  console.log(pokemon);
 
   return (
     <div className="container mx-auto px-4 py-8">

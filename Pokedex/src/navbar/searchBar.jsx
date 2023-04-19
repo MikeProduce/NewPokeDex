@@ -35,7 +35,6 @@ const SearchPokemon = () => {
           >
             <option value={"All"}>All Pokemon</option>
             <option value={"Type"}>Type</option>
-            <option value={"Generation"}>Generation</option>
           </select>
           <input
             name="searchInput"
